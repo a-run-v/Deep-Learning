@@ -40,7 +40,7 @@ across different domains.
 
 ### Core Components of Neural Networks
 
-![NN Fundementals](images/Understanding Neural Network Fundamentals.png)
+![NN Fundementals](images/Understanding-Neural-Network-Fundamentals.png)
 
 ### 1. Neurons / Units
 
@@ -79,18 +79,14 @@ across different domains.
 
 ### What are the different neural networks?
 
-![NN Types](images/Types of Neural Network.png)
-
-
+![NN Types](images/Types-of-Neural-Network.png)
 
 - **Feedforward Neurons/ANN**: These have unidirectional connections between 
   nodes and typically involve layers such as an input layer, hidden layers 
   with activation functions like ReLU/Tanh/Sigmoid etc., followed by the 
   Output Layer.
 
-
-
--  **Recurrent Neural Networks (RNN)** : RNNs are designed to handle 
+- **Recurrent Neural Networks (RNN)** : RNNs are designed to handle 
   sequential data processing tasks where they can remember previous inputs 
   for a given time-step and update their output based on new input values 
   through recurrent connections between neurons present in multiple layers 
@@ -99,19 +95,15 @@ across different domains.
 
 ![RNN](images/RNN.png)
 
-
-
--  **Convolutional Neural Networks (CNN)** : CNNs are designed to process 
-    grid-like structured data such as images where they utilize convolution 
-    operations that involve applying filters to the input image which extract 
-    features at different levels of abstraction; these extracted feature maps 
-    go through pooling and fully connected layers before producing an output 
-    classification/classification probabilities for each pixel. Commonly used 
-    in tasks like object recognition, face detection etc.
+- **Convolutional Neural Networks (CNN)** : CNNs are designed to process 
+   grid-like structured data such as images where they utilize convolution 
+   operations that involve applying filters to the input image which extract 
+   features at different levels of abstraction; these extracted feature maps 
+   go through pooling and fully connected layers before producing an output 
+   classification/classification probabilities for each pixel. Commonly used 
+   in tasks like object recognition, face detection etc.
 
 ![CNN](images/CNN.png)
-
-
 
 - **Autoencoders** : Autoencoders are a type of unsupervised NN model 
     designed to encode input data into compressed latent space representations 
@@ -122,8 +114,6 @@ across different domains.
     dimensionality reduction etc.
 
 ![Auto Encoders](images/AutoEncoders.png)
-
-
 
 - **Generative Adversarial Networks(GANs)** : GAN consists of two neural 
     networks- generator network which generates samples from random noise 
@@ -136,16 +126,12 @@ across different domains.
 
 ![GAN](images/GAN.png)    
 
-
-
 - **Transformers**: A transformer is a deep learning model architecture used primarily for processing sequential data (like language) and has been most popularized 
   by the BERT (Bidirectional Encoder Representations from Transformers), 
   GPT-3(Generative Pre-trained Transformer 3), etc., models.  Transformers are designed to efficiently learn complex relationships between words/tokens in sequential data through their unique self-attention mechanism. These capabilities have made them extremely effective for language modeling tasks like translation/sequencing generation as well as other applications involving structured/unstructured inputs such as time-series analysis and image processing etc.. Overall they represent an evolution of neural network models that are capable of learning long-range contextual relationships in data more efficiently than 
    traditional RNN/LSTM networks.
 
 ![Transformers](images/Transformers.png)
-
-
 
 These are some of the popular neural networks used for deep learning 
 applications along with many others; choice depends upon 
