@@ -40,7 +40,7 @@ across different domains.
 
 ### Core Components of Neural Networks
 
-![NN Fundementals](images/Understanding Neural Network Fundamentals.png)
+![NN Fundementals](./images/Understanding Neural Network Fundamentals.png)
 
 ### 1. Neurons / Units
 
