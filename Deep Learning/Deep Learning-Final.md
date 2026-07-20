@@ -38,7 +38,9 @@ experts struggle with like image recognition or natural language
 processing; making it a powerful tool for solving real-world problems 
 across different domains.
 
-### Core Components of Neural Networks![](/home/arun/Documents/Learning/AI%20to%20Github/Deep%20Learning/Images/Understanding%20Neural%20Network%20Fundamentals.png)
+### Core Components of Neural Networks
+
+![NN Fundementals](images/Understanding Neural Network Fundamentals.png)
 
 ### 1. Neurons / Units
 
@@ -75,48 +77,75 @@ across different domains.
   - Measures difference between actual output and predicted results.
     - Common examples: Mean Squared Error (MSE), Cross Entropy/Sum Square error
 
-### What are the different neural networks?![](/home/arun/Documents/Learning/AI%20to%20Github/Deep%20Learning/Images/Types%20of%20Neural%20Network.png)
+### What are the different neural networks?
+
+![NN Types](images/Types of Neural Network.png)
+
+
 
 - **Feedforward Neurons/ANN**: These have unidirectional connections between 
   nodes and typically involve layers such as an input layer, hidden layers 
   with activation functions like ReLU/Tanh/Sigmoid etc., followed by the 
   Output Layer.
-. **Recurrent Neural Networks (RNN)** : RNNs are designed to handle 
+
+
+
+-  **Recurrent Neural Networks (RNN)** : RNNs are designed to handle 
   sequential data processing tasks where they can remember previous inputs 
   for a given time-step and update their output based on new input values 
   through recurrent connections between neurons present in multiple layers 
   of hidden units/neurons; popular variants include LSTM, GRU etc. They have 
-  applications like sequence prediction or text generation![](/home/arun/Documents/Learning/AI%20to%20Github/Deep%20Learning/Images/RNN.png)
+  applications like sequence prediction or text generation.
 
-. **Convolutional Neural Networks (CNN)** : CNNs are designed to process 
-  grid-like structured data such as images where they utilize convolution 
-  operations that involve applying filters to the input image which extract 
-  features at different levels of abstraction; these extracted feature maps 
-  go through pooling and fully connected layers before producing an output 
-  classification/classification probabilities for each pixel. Commonly used 
-  in tasks like object recognition, face detection etc.![](/home/arun/Documents/Learning/AI%20to%20Github/Deep%20Learning/Images/CNN.png)
+![RNN](images/RNN.png)
 
-. **Autoencoders** : Autoencoders are a type of unsupervised NN model 
-  designed to encode input data into compressed latent space representations 
-  or features; subsequently decoding it back into its original form with 
-  minimal loss/error using another set of weights/parameters for encoding 
-  and decoding layers respectively (usually trained by reconstructing the 
-  initial inputs after training). Used in tasks like anomaly detection, 
-  dimensionality reduction etc.![](/home/arun/Documents/Learning/AI%20to%20Github/Deep%20Learning/Images/AutoEncoders.png)
 
-. **Generative Adversarial Networks(GANs)** : GAN consists of two neural 
-  networks- generator network which generates samples from random noise 
-  vectors to make them indistinguishable with real-world data distributions; 
-  and discriminator network that tries to differentiate between generated 
-  fake/synthetic outputs vs true-real world examples based on learned 
-  features or patterns. Trained using backpropagation until both 
-  discriminators & generators converge through iterations resulting in 
-  realistic synthetic sample generation.![](/home/arun/Documents/Learning/AI%20to%20Github/Deep%20Learning/Images/GAN.png)
 
-. **Transformers**: A transformer is a deep learning model architecture used primarily for processing sequential data (like language) and has been most popularized 
+-  **Convolutional Neural Networks (CNN)** : CNNs are designed to process 
+    grid-like structured data such as images where they utilize convolution 
+    operations that involve applying filters to the input image which extract 
+    features at different levels of abstraction; these extracted feature maps 
+    go through pooling and fully connected layers before producing an output 
+    classification/classification probabilities for each pixel. Commonly used 
+    in tasks like object recognition, face detection etc.
+
+![CNN](images/CNN.png)
+
+
+
+- **Autoencoders** : Autoencoders are a type of unsupervised NN model 
+    designed to encode input data into compressed latent space representations 
+    or features; subsequently decoding it back into its original form with 
+    minimal loss/error using another set of weights/parameters for encoding 
+    and decoding layers respectively (usually trained by reconstructing the 
+    initial inputs after training). Used in tasks like anomaly detection, 
+    dimensionality reduction etc.
+
+![Auto Encoders](images/AutoEncoders.png)
+
+
+
+- **Generative Adversarial Networks(GANs)** : GAN consists of two neural 
+    networks- generator network which generates samples from random noise 
+    vectors to make them indistinguishable with real-world data distributions; 
+    and discriminator network that tries to differentiate between generated 
+    fake/synthetic outputs vs true-real world examples based on learned 
+    features or patterns. Trained using backpropagation until both 
+    discriminators & generators converge through iterations resulting in 
+    realistic synthetic sample generation.
+
+![GAN](images/GAN.png)    
+
+
+
+- **Transformers**: A transformer is a deep learning model architecture used primarily for processing sequential data (like language) and has been most popularized 
   by the BERT (Bidirectional Encoder Representations from Transformers), 
   GPT-3(Generative Pre-trained Transformer 3), etc., models.  Transformers are designed to efficiently learn complex relationships between words/tokens in sequential data through their unique self-attention mechanism. These capabilities have made them extremely effective for language modeling tasks like translation/sequencing generation as well as other applications involving structured/unstructured inputs such as time-series analysis and image processing etc.. Overall they represent an evolution of neural network models that are capable of learning long-range contextual relationships in data more efficiently than 
-  traditional RNN/LSTM networks.![](/home/arun/Documents/Learning/AI%20to%20Github/Deep%20Learning/Images/Transformers.png)
+   traditional RNN/LSTM networks.
+
+![Transformers](images/Transformers.png)
+
+
 
 These are some of the popular neural networks used for deep learning 
 applications along with many others; choice depends upon 
