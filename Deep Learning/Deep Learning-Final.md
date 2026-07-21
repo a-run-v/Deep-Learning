@@ -77,6 +77,20 @@ across different domains.
   - Measures difference between actual output and predicted results.
     - Common examples: Mean Squared Error (MSE), Cross Entropy/Sum Square error
 
+### 6. **Gradient Descent**
+
+- An optimization algorithm that minimizes the cost function by iteratively adjusting weights. It uses gradients calculated via backpropagation, with the 
+  learning rate controlling step size, balancing between convergence speed and stability.
+
+### 7.  **Backpropagation**
+
+- A method to compute gradients of errors concerning network weights using the chain rule, efficiently propagating errors backward through layers for weight 
+  adjustment.
+
+
+
+Together, these concepts form the foundation of training neural networks, allowing models to learn from data by minimizing prediction errors through iterative weight adjustments. 
+
 ### What are the different neural networks?
 
 ![NN Types](images/Types-of-Neural-Network.png)
