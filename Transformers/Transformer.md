@@ -130,7 +130,7 @@ Once we have tokens, the computer assigns each token a unique ID (e.g., `"Apple"
 
 ### Visualizing Meaning Space
 
-Plaintext
+ 
 
 ```
 [Meaning Space Map]
