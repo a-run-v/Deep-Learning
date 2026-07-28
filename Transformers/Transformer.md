@@ -74,8 +74,6 @@
 
 ![overview](images/1-Overview.png)
 
-
-
 ## 3. Step 1: Tokenization (The "Cutting" Phase)
 
 Think of Tokenization as chopping a sentence into pieces so the computer can handle them one by one.
@@ -100,7 +98,7 @@ Sentence: `"I love apples."`
    
    - `"s"` $\rightarrow$ **31**
 
-![Tokenization](/home/arun/Documents/Learning/AI%20to%20Github/Transformers/images/2-Tokenization.png)
+![Tokenization](images/2-Tokenization.png)
 
 ## 4. Step 2: Embedding (The "Meaning" Phase)
 
@@ -161,9 +159,7 @@ Plaintext
 
 ## 
 
-![Embedding](/home/arun/Documents/Learning/AI%20to%20Github/Transformers/images/3-Embedding.png)
-
-
+![Embedding](images/3-Embedding.png)
 
 ## 5. Step 3: Positional Encoding
 
@@ -191,9 +187,7 @@ These are unique mathematical signatures (using sine and cosine waves) added dir
 
 ## 
 
-![Positional Encoding](/home/arun/Documents/Learning/AI%20to%20Github/Transformers/images/4-Position%20encoding.png)
-
-
+![Positional Encoding](images/4-Position_encoding.png)
 
 ## 6. Step 4: The Attention Mechanism
 
@@ -291,8 +285,6 @@ Instead of running a single attention calculation, the Transformer runs multiple
 
 ## 8. Step 6: Encoder vs. Decoder Execution Block
 
- 
-
 ```
        Encoder Block (Nx)                         Decoder Block (Nx)
  +----------------------------+             +----------------------------+
@@ -340,19 +332,13 @@ Given the exact same input, the heads can specialize to give the model greater d
 
 **The Key Difference:** A single self-attention mechanism forces the model to mash all contextual relationships into one averaged perspective. Multi-head attention splits the workload, allowing the model to **maintain multiple, distinct perspectives of how words relate to one another** at the exact same time.
 
-
-
 **Encoder**
 
-![Encoder](/home/arun/Documents/Learning/AI%20to%20Github/Transformers/images/5-Encoder.png)
-
-
+![Encoder](images/5-Encoder.png)
 
 **Decoder**
 
-![Decoder](/home/arun/Documents/Learning/AI%20to%20Github/Transformers/images/6-Decoder.png)
-
-
+![Decoder](images/6-Decoder.png)
 
 ## 9. After all the Attention
 
