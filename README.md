@@ -11,3 +11,6 @@ GAN) and Transformers.
 
 Hope this brief introduction serves as a starting point on your 
 exciting journey into Deep Learning!
+
+## Transformers
+This directory covers basic concepts of **Transformers**.
