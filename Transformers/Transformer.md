@@ -72,7 +72,7 @@
 
 **Overview of Architecture**
 
-![overview](Transformers/images/1-Overview.png)
+![overview](images/1-Overview.png)
 
 
 
