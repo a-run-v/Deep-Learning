@@ -72,7 +72,7 @@
 
 **Overview of Architecture**
 
-![overview](/home/arun/Documents/Learning/AI%20to%20Github/Transformers/images/1-Overview.png)
+![overview](Transformers/images/1-Overview.png)
 
 
 
