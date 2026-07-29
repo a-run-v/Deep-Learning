@@ -130,8 +130,6 @@ Once we have tokens, the computer assigns each token a unique ID (e.g., `"Apple"
 
 ### Visualizing Meaning Space
 
- 
-
 ```
 [Meaning Space Map]
 (High Biological)
@@ -146,6 +144,32 @@ Once we have tokens, the computer assigns each token a unique ID (e.g., `"Apple"
 +------------------------------------------------------>
 (Low Biological)                                     (High Tech)
 ```
+
+
+
+#### Conceptual Concept & Feature Representation
+
+If we imagine the embedding dimensions represent specific characteristics, we can see how relationships emerge:
+
+| **Feature Dimension** | **Token "I" (ID: 101) Vector** | **Token "love" (ID: 203) Vector** | **Token "apples" (ID: 501) Vector** | **Description of dimension**                                               |
+| --------------------- | ------------------------------ | --------------------------------- | ----------------------------------- | -------------------------------------------------------------------------- |
+| **Living Creature**   | `10`                           | `-1`                              | `2`                                 | Is the subject alive or inanimate? (I=High, Apple=Moderate, Love=Negative) |
+| **Action/Verb**       | `-9`                           | `10`                              | `-8`                                | Is this word describing an action? (Love=High)                             |
+| **Affection**         | `-2`                           | `10`                              | `-3`                                | Does this concept convey positive emotion? (Love=High)                     |
+| **Food Category**     | `-7`                           | `0`                               | `10`                                | Is this word a food item? (Apple=High)                                     |
+| **Plural**            | `0`                            | `0`                               | `10`                                | Is the concept multiple or singular? (Apples=High)                         |
+
+
+
+**For example**
+
+When a word (like `"apples"`) is converted into a vector, the computer needs a way to describe its meaning mathematically. The **embedding dimension** is the length of that vector.
+
+- If the embedding dimension is **3**, the word vector looks like:
+  
+  `[0.2, -0.8, 1.5]`
+
+- If the embedding dimension is **768** (a standard base size), the word vector is a list of **768 floating-point numbers**.
 
 ### Summary Comparison: Tokenization vs. Embedding
 
@@ -283,6 +307,25 @@ Instead of running a single attention calculation, the Transformer runs multiple
 
 - Another head might focus on verb tense.
 
+**Self attention vs Multihead attention**
+
+In sentence **"Mary gave roses to Susan"** to see how both mechanisms process the exact same input.
+
+**Using a Single Self-Attention Mechanism:** The model computes one set of Query, Key, and Value matrices for the entire sentence. When it processes the word "gave", the attention mechanism calculates that this verb is highly relevant to "Mary" (the person doing the giving), "roses" (the item being given), and "Susan" (the recipient).
+
+However, because there is only one attention operation, **all of this information is summed and averaged together into a single vector**. The model knows that "gave" is strongly connected to Mary, roses, and Susan, but it cannot clearly distinguish the different *roles* each word plays because those distinct relationships are blended into one mixed signal.
+
+**Using Multi-Head Attention:** Instead of computing attention once, the model splits the word embeddings into smaller segments and runs several self-attention operations (called "heads") in parallel. Because each head has its own independent weight matrices, it can learn to **focus on entirely different aspects of the same word** simultaneously.
+
+Given the exact same input, the heads can specialize to give the model greater discriminatory power:
+
+- **Head 1** might act as the "subject finder," forming a strong relationship between "gave" and **"Mary"**.
+- **Head 2** might act as the "object finder," forming a strong relationship between "gave" and **"roses"**.
+- **Head 3** might act as the "recipient finder," linking "gave" heavily to **"Susan"**.
+- **Head 4** might simply focus on grammar, recognizing that "gave" is acting as a verb in this specific context.
+
+**The Key Difference:** A single self-attention mechanism forces the model to mash all contextual relationships into one averaged perspective. Multi-head attention splits the workload, allowing the model to **maintain multiple, distinct perspectives of how words relate to one another** at the exact same time.
+
 ## 8. Step 6: Encoder vs. Decoder Execution Block
 
 ```
@@ -313,24 +356,7 @@ Instead of running a single attention calculation, the Transformer runs multiple
 | **Where $Q, K, V$ Come From** | $Q, K, V$ are **all** derived from the same source (previous encoder layer).  | **Masked Self-Attn:** $Q, K, V$ from previous decoder output.<br>**Cross-Attn:** $Q$ from Decoder; $K, V$ from Encoder output. |
 | **Key Output**                | Contextualized representation matrix (memory bank).                           | Next-token probabilities (logits) to predict next word.                                                                        |
 
-#### Self attention vs Multihead attention
-
-In sentence **"Mary gave roses to Susan"** to see how both mechanisms process the exact same input.
-
-**Using a Single Self-Attention Mechanism:** The model computes one set of Query, Key, and Value matrices for the entire sentence. When it processes the word "gave", the attention mechanism calculates that this verb is highly relevant to "Mary" (the person doing the giving), "roses" (the item being given), and "Susan" (the recipient).
-
-However, because there is only one attention operation, **all of this information is summed and averaged together into a single vector**. The model knows that "gave" is strongly connected to Mary, roses, and Susan, but it cannot clearly distinguish the different *roles* each word plays because those distinct relationships are blended into one mixed signal.
-
-**Using Multi-Head Attention:** Instead of computing attention once, the model splits the word embeddings into smaller segments and runs several self-attention operations (called "heads") in parallel. Because each head has its own independent weight matrices, it can learn to **focus on entirely different aspects of the same word** simultaneously.
-
-Given the exact same input, the heads can specialize to give the model greater discriminatory power:
-
-- **Head 1** might act as the "subject finder," forming a strong relationship between "gave" and **"Mary"**.
-- **Head 2** might act as the "object finder," forming a strong relationship between "gave" and **"roses"**.
-- **Head 3** might act as the "recipient finder," linking "gave" heavily to **"Susan"**.
-- **Head 4** might simply focus on grammar, recognizing that "gave" is acting as a verb in this specific context.
-
-**The Key Difference:** A single self-attention mechanism forces the model to mash all contextual relationships into one averaged perspective. Multi-head attention splits the workload, allowing the model to **maintain multiple, distinct perspectives of how words relate to one another** at the exact same time.
+#### 
 
 **Encoder**
 
